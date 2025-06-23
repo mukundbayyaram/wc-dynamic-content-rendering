@@ -1,0 +1,12 @@
+<div class="dropdown-menu">
+  <button class="dropdown-toggle" (click)="toggleDropdown()">
+    Dropdown Menu
+    <span class="arrow">▼</span>
+  </button>
+  
+  <div class="dropdown-content" [class.show]="isOpen">
+    <a href="#" class="dropdown-item">Option 1</a>
+    <a href="#" class="dropdown-item">Option 2</a>
+    <a href="#" class="dropdown-item">Option 3</a>
+  </div>
+</div> 

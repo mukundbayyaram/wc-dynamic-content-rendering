@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./dropdown-menu.component.css']
 })
 export class DropdownMenuComponent {
+  isOpen = false;
 
+  toggleDropdown() {
+    this.isOpen = !this.isOpen;
+  }
 }
