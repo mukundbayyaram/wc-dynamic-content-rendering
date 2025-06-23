@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular Web Component Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .demo-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Angular Web Component Demo</h1>
+    
+    <div class="demo-section">
+        <h2>Demo 1: Simple HTML Content</h2>
+        <repeated-content-element id="demo1"></repeated-content-element>
+    </div>
+
+    <div class="demo-section">
+        <h2>Demo 2: Dynamic Content</h2>
+        <repeated-content-element id="demo2"></repeated-content-element>
+    </div>
+
+    <script>
+        // Load the Angular web component bundle
+        // Note: You'll need to build the Angular app first
+        // <script src="dist/angular-app/main.js"></script>
+
+        // Demo 1: Simple HTML content
+        const demo1 = document.getElementById('demo1');
+        demo1.renderer = (container) => {
+            container.innerHTML = '<div style="color: blue; padding: 10px; border: 1px solid blue;">Simple HTML content from JavaScript</div>';
+        };
+
+        // Demo 2: Dynamic content with timestamp
+        const demo2 = document.getElementById('demo2');
+        demo2.renderer = (container) => {
+            const timestamp = new Date().toLocaleTimeString();
+            container.innerHTML = `<div style="color: green; padding: 10px; border: 1px solid green;">Dynamic content generated at: ${timestamp}</div>`;
+        };
+
+        // Update demo2 every second
+        setInterval(() => {
+            demo2.renderer = demo2.renderer; // Trigger ngOnChanges
+        }, 1000);
+    </script>
+</body>
+</html> 

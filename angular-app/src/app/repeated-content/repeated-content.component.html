@@ -1,0 +1,20 @@
+<div style="border: 2px solid blue; padding: 10px; margin: 10px 0;">
+  <h3>Content Area 1</h3>
+  <div #container1 style="min-height: 50px; background: #f0f8ff; border: 1px dashed #0066cc; padding: 5px;"></div>
+</div>
+
+<div style="border: 2px solid green; padding: 10px; margin: 10px 0;">
+  <h3>Content Area 2</h3>
+  <div #container2 style="min-height: 50px; background: #f0fff0; border: 1px dashed #006600; padding: 5px;"></div>
+</div>
+
+<div style="border: 2px solid red; padding: 10px; margin: 10px 0;">
+  <h3>Content Area 51</h3>
+  <!-- <ng-content select="[slot=content]"></ng-content> -->
+</div>
+
+<div style="border: 2px solid red; padding: 10px; margin: 10px 0;">
+  <h3>Content Area 52</h3>
+  <ng-content select="content"></ng-content>
+  <p>Hello from Angular! 52</p>
+</div>

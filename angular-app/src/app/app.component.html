@@ -1,0 +1,23 @@
+<div style="padding: 20px; font-family: Arial, sans-serif;">
+  <h1>Angular App Test</h1>
+  
+  <button 
+    (click)="manualTrigger()" 
+    style="background: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin: 10px 0;">
+    🔄 Manual Trigger Render
+  </button>
+  
+  <app-repeated-content 
+    #repeatedContent
+    [renderer]="rendererFunction">
+    <content>Slot appears</content>
+  </app-repeated-content>
+  
+  <div style="margin-top: 20px; padding: 10px; background-color: #e8f5e8; border: 1px solid #4caf50; border-radius: 5px;">
+    <h3>Web Component Test</h3>
+    <p>Below is the web component used within Angular:</p>
+    <repeated-content-element [renderer]="rendererFunction" id="test-web-component" #testWebComponent>
+      <content>Slot appears</content>
+    </repeated-content-element>
+  </div>
+</div>
